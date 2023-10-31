@@ -17,7 +17,7 @@ struct APIError {
     static let notFound            = "Not Found"
     static let parameterMissing    = "Missing Param"
     static let unAuthorizeUser     = "Authorisation Error"
-    static let noInternet          = "No Internet Connection"
+    static let noInternet          = "No Internet Connection Yes"
     static let noData              = "No data"
 }
 

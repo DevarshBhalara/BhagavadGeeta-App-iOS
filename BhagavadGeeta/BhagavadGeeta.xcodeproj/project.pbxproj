@@ -11,6 +11,10 @@
 		1150DF062AEF87890051FA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF052AEF87890051FA36 /* ContentView.swift */; };
 		1150DF082AEF878A0051FA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF072AEF878A0051FA36 /* Assets.xcassets */; };
 		1150DF0B2AEF878A0051FA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */; };
+		11C597A42AF1470400505E18 /* Slok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A32AF1470400505E18 /* Slok.swift */; };
+		11C597A62AF1484200505E18 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A52AF1484200505E18 /* UserDefaultHelper.swift */; };
+		11C8EDA32AF0D5C700008A63 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8EDA22AF0D5C700008A63 /* Chapter.swift */; };
+		11C8EDA52AF0DED000008A63 /* ChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8EDA42AF0DED000008A63 /* ChaptersViewModel.swift */; };
 		11CB10602AEFFBAE00DC6A51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB105F2AEFFBAE00DC6A51 /* AppConstants.swift */; };
 		11CB10632AEFFBC400DC6A51 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB10622AEFFBC400DC6A51 /* KeychainHelper.swift */; };
 		11CB106B2AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB10652AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift */; };
@@ -28,6 +32,11 @@
 		1150DF052AEF87890051FA36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1150DF072AEF878A0051FA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11C597A32AF1470400505E18 /* Slok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slok.swift; sourceTree = "<group>"; };
+		11C597A52AF1484200505E18 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		11C8EDA22AF0D5C700008A63 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		11C8EDA42AF0DED000008A63 /* ChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewModel.swift; sourceTree = "<group>"; };
+		11C8EDA62AF0E48000008A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		11CB105F2AEFFBAE00DC6A51 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		11CB10622AEFFBC400DC6A51 /* KeychainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		11CB10652AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+ErrorHandler.swift"; sourceTree = "<group>"; };
@@ -74,12 +83,12 @@
 		1150DF022AEF87890051FA36 /* BhagavadGeeta */ = {
 			isa = PBXGroup;
 			children = (
+				11C8EDA62AF0E48000008A63 /* Info.plist */,
 				11CB10712AEFFBEA00DC6A51 /* Module */,
 				11CB10642AEFFBD500DC6A51 /* Network Layer */,
 				11CB10612AEFFBC400DC6A51 /* Helpers */,
 				11CB105E2AEFFBAE00DC6A51 /* Utils */,
 				1150DF032AEF87890051FA36 /* BhagavadGeetaApp.swift */,
-				1150DF052AEF87890051FA36 /* ContentView.swift */,
 				1150DF072AEF878A0051FA36 /* Assets.xcassets */,
 				1150DF092AEF878A0051FA36 /* Preview Content */,
 			);
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				11CB10622AEFFBC400DC6A51 /* KeychainHelper.swift */,
+				11C597A52AF1484200505E18 /* UserDefaultHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -126,8 +136,44 @@
 		11CB10712AEFFBEA00DC6A51 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				11CB10722AEFFCB600DC6A51 /* Home */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		11CB10722AEFFCB600DC6A51 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				11CB10752AEFFCCC00DC6A51 /* Model */,
+				11CB10742AEFFCC700DC6A51 /* ViewModel */,
+				11CB10732AEFFCBD00DC6A51 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		11CB10732AEFFCBD00DC6A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1150DF052AEF87890051FA36 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11CB10742AEFFCC700DC6A51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11C8EDA42AF0DED000008A63 /* ChaptersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11CB10752AEFFCCC00DC6A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C8EDA22AF0D5C700008A63 /* Chapter.swift */,
+				11C597A32AF1470400505E18 /* Slok.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A4B033A9649D4379EB499459 /* Pods */ = {
@@ -261,7 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C8EDA52AF0DED000008A63 /* ChaptersViewModel.swift in Sources */,
 				1150DF062AEF87890051FA36 /* ContentView.swift in Sources */,
+				11C597A62AF1484200505E18 /* UserDefaultHelper.swift in Sources */,
+				11C597A42AF1470400505E18 /* Slok.swift in Sources */,
 				11CB106C2AEFFBD500DC6A51 /* APIManager+EndPoints.swift in Sources */,
 				11CB10602AEFFBAE00DC6A51 /* AppConstants.swift in Sources */,
 				1150DF042AEF87890051FA36 /* BhagavadGeetaApp.swift in Sources */,
@@ -271,6 +320,7 @@
 				11CB10702AEFFBD500DC6A51 /* APIManager+Error.swift in Sources */,
 				11CB10632AEFFBC400DC6A51 /* KeychainHelper.swift in Sources */,
 				11CB106D2AEFFBD500DC6A51 /* APIManager.swift in Sources */,
+				11C8EDA32AF0D5C700008A63 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +457,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BhagavadGeeta/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BhagavadGeeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,6 +487,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BhagavadGeeta/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BhagavadGeeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
