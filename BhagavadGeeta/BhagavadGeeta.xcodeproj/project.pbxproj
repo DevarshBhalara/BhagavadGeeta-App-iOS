@@ -13,6 +13,8 @@
 		1150DF0B2AEF878A0051FA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */; };
 		11C597A42AF1470400505E18 /* Slok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A32AF1470400505E18 /* Slok.swift */; };
 		11C597A62AF1484200505E18 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A52AF1484200505E18 /* UserDefaultHelper.swift */; };
+		11C597AA2AF159DD00505E18 /* ChapterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A92AF159DD00505E18 /* ChapterDetail.swift */; };
+		11C597AC2AF15C0600505E18 /* ChapterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597AB2AF15C0600505E18 /* ChapterDetailViewModel.swift */; };
 		11C8EDA32AF0D5C700008A63 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8EDA22AF0D5C700008A63 /* Chapter.swift */; };
 		11C8EDA52AF0DED000008A63 /* ChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8EDA42AF0DED000008A63 /* ChaptersViewModel.swift */; };
 		11CB10602AEFFBAE00DC6A51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB105F2AEFFBAE00DC6A51 /* AppConstants.swift */; };
@@ -34,6 +36,8 @@
 		1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		11C597A32AF1470400505E18 /* Slok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slok.swift; sourceTree = "<group>"; };
 		11C597A52AF1484200505E18 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		11C597A92AF159DD00505E18 /* ChapterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetail.swift; sourceTree = "<group>"; };
+		11C597AB2AF15C0600505E18 /* ChapterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewModel.swift; sourceTree = "<group>"; };
 		11C8EDA22AF0D5C700008A63 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		11C8EDA42AF0DED000008A63 /* ChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewModel.swift; sourceTree = "<group>"; };
 		11C8EDA62AF0E48000008A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		1150DF022AEF87890051FA36 /* BhagavadGeeta */ = {
 			isa = PBXGroup;
 			children = (
+				11C597A72AF1596400505E18 /* Model */,
 				11C8EDA62AF0E48000008A63 /* Info.plist */,
 				11CB10712AEFFBEA00DC6A51 /* Module */,
 				11CB10642AEFFBD500DC6A51 /* Network Layer */,
@@ -101,6 +106,24 @@
 				1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11C597A72AF1596400505E18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C8EDA22AF0D5C700008A63 /* Chapter.swift */,
+				11C597A32AF1470400505E18 /* Slok.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C597A82AF159C900505E18 /* Chapter */ = {
+			isa = PBXGroup;
+			children = (
+				11C597A92AF159DD00505E18 /* ChapterDetail.swift */,
+				11C597AB2AF15C0600505E18 /* ChapterDetailViewModel.swift */,
+			);
+			path = Chapter;
 			sourceTree = "<group>";
 		};
 		11CB105E2AEFFBAE00DC6A51 /* Utils */ = {
@@ -136,6 +159,7 @@
 		11CB10712AEFFBEA00DC6A51 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				11C597A82AF159C900505E18 /* Chapter */,
 				11CB10722AEFFCB600DC6A51 /* Home */,
 			);
 			path = Module;
@@ -170,8 +194,6 @@
 		11CB10752AEFFCCC00DC6A51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				11C8EDA22AF0D5C700008A63 /* Chapter.swift */,
-				11C597A32AF1470400505E18 /* Slok.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,9 +338,11 @@
 				1150DF042AEF87890051FA36 /* BhagavadGeetaApp.swift in Sources */,
 				11CB106E2AEFFBD500DC6A51 /* APIManager+Request.swift in Sources */,
 				11CB106B2AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift in Sources */,
+				11C597AA2AF159DD00505E18 /* ChapterDetail.swift in Sources */,
 				11CB106F2AEFFBD500DC6A51 /* APIManager+Inerceptor.swift in Sources */,
 				11CB10702AEFFBD500DC6A51 /* APIManager+Error.swift in Sources */,
 				11CB10632AEFFBC400DC6A51 /* KeychainHelper.swift in Sources */,
+				11C597AC2AF15C0600505E18 /* ChapterDetailViewModel.swift in Sources */,
 				11CB106D2AEFFBD500DC6A51 /* APIManager.swift in Sources */,
 				11C8EDA32AF0D5C700008A63 /* Chapter.swift in Sources */,
 			);

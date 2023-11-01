@@ -54,7 +54,6 @@ class ChaptersViewModel: ObservableObject {
                     UserDefaultHelper.shared.randomSlokEnglish = slok.siva.et
                     UserDefaultHelper.shared.randomSlokHindi = slok.tej.ht
                     self.randomSlok = slok
-                    print(slok)
                 }
                 
             case .failure(let error):
