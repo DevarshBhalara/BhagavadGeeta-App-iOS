@@ -11,6 +11,7 @@ import Alamofire
 enum RequestItemsType: Equatable {
     case chapters
     case slok(String, String)
+    case chapter(String)
 }
 
 // MARK: Extensions
@@ -34,6 +35,8 @@ extension RequestItemsType: EndPointType {
             return "chapters"
         case .slok(let ch, let sl):
             return "slok/\(ch)/\(sl)"
+        case .chapter(let ch):
+            return "chapter/\(ch)"
         }
     }
     
