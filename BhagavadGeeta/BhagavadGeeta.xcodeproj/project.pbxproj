@@ -11,6 +11,9 @@
 		1150DF062AEF87890051FA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF052AEF87890051FA36 /* ContentView.swift */; };
 		1150DF082AEF878A0051FA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF072AEF878A0051FA36 /* Assets.xcassets */; };
 		1150DF0B2AEF878A0051FA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */; };
+		115839A12AF288D100E5B333 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 115839A02AF288D100E5B333 /* SlidingTabView */; };
+		115839A32AF288E000E5B333 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115839A22AF288E000E5B333 /* Verse.swift */; };
+		11BACC282AF2A942003203C6 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BACC272AF2A942003203C6 /* VerseViewModel.swift */; };
 		11C597A42AF1470400505E18 /* Slok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A32AF1470400505E18 /* Slok.swift */; };
 		11C597A62AF1484200505E18 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A52AF1484200505E18 /* UserDefaultHelper.swift */; };
 		11C597AA2AF159DD00505E18 /* ChapterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C597A92AF159DD00505E18 /* ChapterDetail.swift */; };
@@ -34,6 +37,8 @@
 		1150DF052AEF87890051FA36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1150DF072AEF878A0051FA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		115839A22AF288E000E5B333 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		11BACC272AF2A942003203C6 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
 		11C597A32AF1470400505E18 /* Slok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slok.swift; sourceTree = "<group>"; };
 		11C597A52AF1484200505E18 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		11C597A92AF159DD00505E18 /* ChapterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetail.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115839A12AF288D100E5B333 /* SlidingTabView in Frameworks */,
 				5CF38146DD4BBB1BF753976B /* Pods_BhagavadGeeta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +112,15 @@
 				1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1158399E2AF2880D00E5B333 /* Verse */ = {
+			isa = PBXGroup;
+			children = (
+				115839A22AF288E000E5B333 /* Verse.swift */,
+				11BACC272AF2A942003203C6 /* VerseViewModel.swift */,
+			);
+			path = Verse;
 			sourceTree = "<group>";
 		};
 		11C597A72AF1596400505E18 /* Model */ = {
@@ -159,6 +174,7 @@
 		11CB10712AEFFBEA00DC6A51 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1158399E2AF2880D00E5B333 /* Verse */,
 				11C597A82AF159C900505E18 /* Chapter */,
 				11CB10722AEFFCB600DC6A51 /* Home */,
 			);
@@ -233,6 +249,9 @@
 			dependencies = (
 			);
 			name = BhagavadGeeta;
+			packageProductDependencies = (
+				115839A02AF288D100E5B333 /* SlidingTabView */,
+			);
 			productName = BhagavadGeeta;
 			productReference = 1150DF002AEF87890051FA36 /* BhagavadGeeta.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 1150DEF72AEF87890051FA36;
+			packageReferences = (
+				1158399F2AF288D100E5B333 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+			);
 			productRefGroup = 1150DF012AEF87890051FA36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +361,8 @@
 				11CB106E2AEFFBD500DC6A51 /* APIManager+Request.swift in Sources */,
 				11CB106B2AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift in Sources */,
 				11C597AA2AF159DD00505E18 /* ChapterDetail.swift in Sources */,
+				11BACC282AF2A942003203C6 /* VerseViewModel.swift in Sources */,
+				115839A32AF288E000E5B333 /* Verse.swift in Sources */,
 				11CB106F2AEFFBD500DC6A51 /* APIManager+Inerceptor.swift in Sources */,
 				11CB10702AEFFBD500DC6A51 /* APIManager+Error.swift in Sources */,
 				11CB10632AEFFBC400DC6A51 /* KeychainHelper.swift in Sources */,
@@ -552,6 +576,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1158399F2AF288D100E5B333 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		115839A02AF288D100E5B333 /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1158399F2AF288D100E5B333 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1150DEF82AEF87890051FA36 /* Project object */;
 }
