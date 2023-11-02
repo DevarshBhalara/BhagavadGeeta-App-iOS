@@ -66,3 +66,35 @@ struct Tej: Codable {
 }
 
 
+// MARK: - Verse Local
+struct Authors: Identifiable {
+    var id = UUID()
+    
+    var authorName: String
+    var hindiTranslation: String?
+    var hindiCommentary: String?
+    var englishTranslation: String?
+    var englishCommentary: String?
+    var sanskritCommentary: String?
+    var totalCommentaryTranslation: Int?
+    var isExpanded: Bool = false
+    var translation: [TranslationOrCommentary]
+}
+
+struct TranslationOrCommentary: Identifiable, Hashable {
+    var id = UUID()
+    var title: String
+    var content: String?
+    
+    // Implement the hash(into:) function to provide a hash value based on your properties.
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(title)
+        hasher.combine(content)
+    }
+    
+    // Implement the == function to compare two instances for equality.
+    static func == (lhs: TranslationOrCommentary, rhs: TranslationOrCommentary) -> Bool {
+        return lhs.id == rhs.id && lhs.title == rhs.title && lhs.content == rhs.content
+    }
+}

@@ -38,15 +38,17 @@ struct ChapterDetail: View {
                         Text("Total verser \(chapter.versesCount)")
                             .font(.title2)
                             .padding(10)
-                        Button(action: {
-                            
-                        }, label: {
+                        NavigationLink {
+                            Verse(verseCount: chapter.versesCount, chapter: "\(chapter.chapterNumber)", slok: nil)
+                        } label: {
                             Text("View all Verse")
                                 .foregroundStyle(Color.white)
                                 .padding(10)
                                 .background(Color("primaryColor"))
                                 .cornerRadius(10)
-                        })
+                        }
+
+                        
                     }
                     
                 }.padding()
@@ -73,6 +75,7 @@ struct ChapterDetail: View {
                     })
             
         }
+        .navigationBarTitle("Chapter \(chapter)", displayMode: .inline)
         Spacer()
     }
 }
