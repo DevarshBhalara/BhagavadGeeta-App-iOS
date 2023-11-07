@@ -12,7 +12,7 @@ class Language: ObservableObject {
 }
 
 // MARK: - Main View
-struct ContentView: View {
+struct HomeView: View {
     
     @StateObject var viewModel = ChaptersViewModel()
     let randomSlok = UserDefaultHelper.shared.randomSlokEnglish
@@ -65,6 +65,7 @@ struct ContentView: View {
         .tint(Color("primaryColor"))
         
     }
+    
 }
 
 struct VerseCard: View {
@@ -93,7 +94,7 @@ struct VerseCard: View {
             }
         }
         .foregroundColor(Color.white)
-        .background(  Image("card_bg")
+        .background(Image("card_bg")
             .resizable()
         )
         .shadow(radius: 10)
@@ -180,5 +181,5 @@ struct Chapters: View {
 
 
 #Preview {
-    ContentView()
+    HomeView()
 }

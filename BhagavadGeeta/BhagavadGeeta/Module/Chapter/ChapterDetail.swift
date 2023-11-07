@@ -12,19 +12,13 @@ struct ChapterDetail: View {
     @StateObject var viewModel = ChapterDetailViewModel()
     @StateObject var language: Language
     let chapter: String
-
     
-    var body: some View {            
+    var body: some View {
         ScrollView {
                 VStack {
                     if let chapter = viewModel.chapter {
-                        Text("CHAPTER \(chapter.chapterNumber)")
-                            .foregroundColor(Color("primaryColor"))
-                            .bold()
-                            .font(.title2)
-                            .padding(10)
-                        
                         Text("\(chapter.translation)" )
+                            .foregroundColor(Color("primaryColor"))
                             .fontWeight(.semibold)
                             .font(.title2)
                             .padding(10)
