@@ -6,11 +6,55 @@
 //
 
 import Foundation
+import CoreData
+import SwiftUI
 
 class VerseViewModel: ObservableObject {
     
     @Published var verse: Slok?
     @Published var authors: [Authors] = []
+    @Published var viewContext: NSManagedObjectContext?
+    
+    func create(ch: String, sl: String, verse: String, verseEnglish: String, completion: () -> ()) {
+        if let viewContext = viewContext {
+            let entity = SavedVerse(context: viewContext)
+            entity.id = UUID()
+            entity.ch = ch
+            entity.sl = sl
+            entity.verse = verse
+            entity.verseEnglish = verseEnglish
+            saveVerse(ch: ch, sl: sl, completion: completion)
+        }
+    }
+    
+    
+    func saveVerse(ch: String, sl: String, completion: () -> ()) {
+
+        if let viewContext = viewContext, viewContext.hasChanges {
+            do {
+                try viewContext.save()
+                completion()
+            } catch {
+                print("Could not save changes to Core Data.", error.localizedDescription)
+            }
+        }
+    }
+    
+    func removeFromsave(verse: SavedVerse, completion: (String, String) -> ()) {
+        if let viewContext = viewContext {
+            let ch = verse.ch ?? ""
+            let sl = verse.sl ?? ""
+            viewContext.delete(verse)
+            
+            do {
+                try viewContext.save()
+                completion(ch, sl)
+            } catch {
+                print("Could not save changes to Core Data.", error.localizedDescription)
+            }
+        }
+    }
+    
     
     func getVerse(ch: String, sl: String) {
         verse = nil
@@ -29,6 +73,8 @@ class VerseViewModel: ObservableObject {
             }
         }
     }
+    
+    
     
     func getAuthors(slok: Slok) -> [Authors] {
         var authors: [Authors] = []

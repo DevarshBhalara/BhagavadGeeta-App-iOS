@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SlidingTabView
 
 struct Verse: View {
     
@@ -15,27 +14,35 @@ struct Verse: View {
     let verseCount: Int
     let chapter: String
     let slok: String?
+    @State var bookMarkImage: String = ""
     @StateObject var viewModel = VerseViewModel()
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) var savedVerse: FetchedResults<SavedVerse>
     
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<verseCount) { count in
-                            Button("Verse \(count + 1)") {
-                                selectedButton = count
-                                viewModel.getVerse(ch: chapter, sl: "\(count + 1)")
+                
+                if verseCount > 0 {
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(Array(0..<verseCount), id: \.self) { count in
+                                Button("Verse \(count + 1)") {
+                                    selectedButton = count
+                                    viewModel.getVerse(ch: chapter, sl: "\(count + 1)")
+                                    changeIcon(ch: chapter, sl: "\(count + 1)")
+                                }
+                                .padding(8)
+                                .foregroundColor(selectedButton == count ? Color("primaryColor") : Color.black)
                             }
-                            .padding(8)
-                            .foregroundColor(selectedButton == count ? Color("primaryColor") : Color.black)
                         }
                     }
+                    Rectangle()
+                        .frame(height: 1)
+                        .padding(.vertical,8)
                 }
-                Rectangle()
-                    .frame(height: 1)
-                    .padding(.vertical,8)
                 if let verse = viewModel.verse {
                     Text("|| \(chapter).\(verse.verse) ||")
                         .foregroundStyle(Color("primaryColor"))
@@ -66,10 +73,46 @@ struct Verse: View {
                 }
                 
             }.onAppear {
+                viewModel.viewContext = viewContext
                 if slok == nil {
                     viewModel.getVerse(ch: chapter, sl: "1")
+                    changeIcon(ch: chapter, sl: "1")
+                } else {
+                    viewModel.getVerse(ch: chapter, sl: slok!)
                 }
+                
             }
+            .navigationBarItems(trailing:  Button("", systemImage: bookMarkImage, action: {
+                if let slok = viewModel.verse?.tej.ht, let englishVerse = viewModel.verse?.siva.et, let sl = viewModel.verse?.verse{
+                    
+                    let isSaved = savedVerse.filter { item in
+                        return item.ch == chapter && item.sl == "\(sl)"
+                    }
+                    
+                    if isSaved.isEmpty {
+                        viewModel.create(ch: chapter, sl: "\(sl)", verse: slok, verseEnglish: englishVerse) {
+                            changeIcon(ch: chapter, sl: "\(sl)")
+                        }
+                    } else {
+                        viewModel.removeFromsave(verse: isSaved.first!) { ch, sl in
+                            changeIcon(ch: ch, sl: sl)
+                        }
+                    }
+                }
+            }))
+        }
+        .navigationBarTitle("", displayMode: .inline)
+    }
+    
+    func changeIcon(ch: String, sl: String) {
+        let isSaved = savedVerse.filter { item in
+            return item.ch == ch && item.sl == sl
+        }.isEmpty
+        
+        if !isSaved {
+            bookMarkImage = "bookmark.fill"
+        } else {
+            bookMarkImage = "bookmark"
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1150DF042AEF87890051FA36 /* BhagavadGeetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF032AEF87890051FA36 /* BhagavadGeetaApp.swift */; };
-		1150DF062AEF87890051FA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF052AEF87890051FA36 /* ContentView.swift */; };
+		1150DF062AEF87890051FA36 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF052AEF87890051FA36 /* HomeView.swift */; };
 		1150DF082AEF878A0051FA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF072AEF878A0051FA36 /* Assets.xcassets */; };
 		1150DF0B2AEF878A0051FA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */; };
 		115839A12AF288D100E5B333 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 115839A02AF288D100E5B333 /* SlidingTabView */; };
@@ -28,13 +28,17 @@
 		11CB106E2AEFFBD500DC6A51 /* APIManager+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB10682AEFFBD500DC6A51 /* APIManager+Request.swift */; };
 		11CB106F2AEFFBD500DC6A51 /* APIManager+Inerceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB10692AEFFBD500DC6A51 /* APIManager+Inerceptor.swift */; };
 		11CB10702AEFFBD500DC6A51 /* APIManager+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB106A2AEFFBD500DC6A51 /* APIManager+Error.swift */; };
+		11DBF1272AF9400B00DC81CD /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBF1262AF9400B00DC81CD /* HomeTabBar.swift */; };
+		11DBF1292AF9404A00DC81CD /* SavedVerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBF1282AF9404A00DC81CD /* SavedVerseView.swift */; };
+		11E095B92AF4D66B001F5E56 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E095B82AF4D66B001F5E56 /* PersistenceController.swift */; };
+		11E095C22AF4E353001F5E56 /* bhagavadgeeta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11E095C02AF4E353001F5E56 /* bhagavadgeeta.xcdatamodeld */; };
 		5CF38146DD4BBB1BF753976B /* Pods_BhagavadGeeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCC1A5BFE1DDEFC956D6C1B /* Pods_BhagavadGeeta.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1150DF002AEF87890051FA36 /* BhagavadGeeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGeeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1150DF032AEF87890051FA36 /* BhagavadGeetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhagavadGeetaApp.swift; sourceTree = "<group>"; };
-		1150DF052AEF87890051FA36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1150DF052AEF87890051FA36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1150DF072AEF878A0051FA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1150DF0A2AEF878A0051FA36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		115839A22AF288E000E5B333 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
@@ -54,6 +58,10 @@
 		11CB10682AEFFBD500DC6A51 /* APIManager+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+Request.swift"; sourceTree = "<group>"; };
 		11CB10692AEFFBD500DC6A51 /* APIManager+Inerceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+Inerceptor.swift"; sourceTree = "<group>"; };
 		11CB106A2AEFFBD500DC6A51 /* APIManager+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+Error.swift"; sourceTree = "<group>"; };
+		11DBF1262AF9400B00DC81CD /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
+		11DBF1282AF9404A00DC81CD /* SavedVerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVerseView.swift; sourceTree = "<group>"; };
+		11E095B82AF4D66B001F5E56 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		11E095C12AF4E353001F5E56 /* bhagavadgeeta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bhagavadgeeta.xcdatamodel; sourceTree = "<group>"; };
 		1DCC1A5BFE1DDEFC956D6C1B /* Pods_BhagavadGeeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BhagavadGeeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D81C0FBC96163A60B62120 /* Pods-BhagavadGeeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BhagavadGeeta.debug.xcconfig"; path = "Target Support Files/Pods-BhagavadGeeta/Pods-BhagavadGeeta.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA69C63D507029AD1137910 /* Pods-BhagavadGeeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BhagavadGeeta.release.xcconfig"; path = "Target Support Files/Pods-BhagavadGeeta/Pods-BhagavadGeeta.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 		1150DEF72AEF87890051FA36 = {
 			isa = PBXGroup;
 			children = (
+				11E095C02AF4E353001F5E56 /* bhagavadgeeta.xcdatamodeld */,
 				1150DF022AEF87890051FA36 /* BhagavadGeeta */,
 				1150DF012AEF87890051FA36 /* Products */,
 				A4B033A9649D4379EB499459 /* Pods */,
@@ -93,6 +102,7 @@
 		1150DF022AEF87890051FA36 /* BhagavadGeeta */ = {
 			isa = PBXGroup;
 			children = (
+				11E095B72AF4D65C001F5E56 /* CoreDataHandler */,
 				11C597A72AF1596400505E18 /* Model */,
 				11C8EDA62AF0E48000008A63 /* Info.plist */,
 				11CB10712AEFFBEA00DC6A51 /* Module */,
@@ -184,7 +194,6 @@
 		11CB10722AEFFCB600DC6A51 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				11CB10752AEFFCCC00DC6A51 /* Model */,
 				11CB10742AEFFCC700DC6A51 /* ViewModel */,
 				11CB10732AEFFCBD00DC6A51 /* View */,
 			);
@@ -194,7 +203,9 @@
 		11CB10732AEFFCBD00DC6A51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1150DF052AEF87890051FA36 /* ContentView.swift */,
+				1150DF052AEF87890051FA36 /* HomeView.swift */,
+				11DBF1262AF9400B00DC81CD /* HomeTabBar.swift */,
+				11DBF1282AF9404A00DC81CD /* SavedVerseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,11 +218,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		11CB10752AEFFCCC00DC6A51 /* Model */ = {
+		11E095B72AF4D65C001F5E56 /* CoreDataHandler */ = {
 			isa = PBXGroup;
 			children = (
+				11E095B82AF4D66B001F5E56 /* PersistenceController.swift */,
 			);
-			path = Model;
+			path = CoreDataHandler;
 			sourceTree = "<group>";
 		};
 		A4B033A9649D4379EB499459 /* Pods */ = {
@@ -352,7 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C8EDA52AF0DED000008A63 /* ChaptersViewModel.swift in Sources */,
-				1150DF062AEF87890051FA36 /* ContentView.swift in Sources */,
+				1150DF062AEF87890051FA36 /* HomeView.swift in Sources */,
 				11C597A62AF1484200505E18 /* UserDefaultHelper.swift in Sources */,
 				11C597A42AF1470400505E18 /* Slok.swift in Sources */,
 				11CB106C2AEFFBD500DC6A51 /* APIManager+EndPoints.swift in Sources */,
@@ -365,10 +377,14 @@
 				115839A32AF288E000E5B333 /* Verse.swift in Sources */,
 				11CB106F2AEFFBD500DC6A51 /* APIManager+Inerceptor.swift in Sources */,
 				11CB10702AEFFBD500DC6A51 /* APIManager+Error.swift in Sources */,
+				11E095C22AF4E353001F5E56 /* bhagavadgeeta.xcdatamodeld in Sources */,
 				11CB10632AEFFBC400DC6A51 /* KeychainHelper.swift in Sources */,
 				11C597AC2AF15C0600505E18 /* ChapterDetailViewModel.swift in Sources */,
+				11DBF1292AF9404A00DC81CD /* SavedVerseView.swift in Sources */,
+				11DBF1272AF9400B00DC81CD /* HomeTabBar.swift in Sources */,
 				11CB106D2AEFFBD500DC6A51 /* APIManager.swift in Sources */,
 				11C8EDA32AF0D5C700008A63 /* Chapter.swift in Sources */,
+				11E095B92AF4D66B001F5E56 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BhagavadGeeta/Preview Content\"";
+				DEVELOPMENT_TEAM = Z85BVMMQ72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BhagavadGeeta/Info.plist;
@@ -533,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BhagavadGeeta/Preview Content\"";
+				DEVELOPMENT_TEAM = Z85BVMMQ72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BhagavadGeeta/Info.plist;
@@ -595,6 +613,19 @@
 			productName = SlidingTabView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		11E095C02AF4E353001F5E56 /* bhagavadgeeta.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11E095C12AF4E353001F5E56 /* bhagavadgeeta.xcdatamodel */,
+			);
+			currentVersion = 11E095C12AF4E353001F5E56 /* bhagavadgeeta.xcdatamodel */;
+			path = bhagavadgeeta.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1150DEF82AEF87890051FA36 /* Project object */;
 }
