@@ -17,13 +17,16 @@ struct HomeView: View {
     @StateObject var viewModel = ChaptersViewModel()
     let randomSlok = UserDefaultHelper.shared.randomSlokEnglish
     @StateObject private var language = Language()
+    @State var lastRead = LastReadModel(lastReadVerseHindi: UserDefaultHelper.shared.lastReadVerseHindi, lastReadVerseEnglish: UserDefaultHelper.shared.lastReadVerseEnglish, lastReadChapter: UserDefaultHelper.shared.lastReadChapter, lastReadVerseNum: UserDefaultHelper.shared.lastReadVerseNum)
     
     var body: some View {
         NavigationStack {
             ScrollView (showsIndicators: false){
                 VStack {
                     VerseCard(viewModel: viewModel, language: language, randomSlok: randomSlok)
-                    LastRead()
+                    if (UserDefaultHelper.shared.lastReadVerseHindi != "") {
+                        LastRead(lastRead: lastRead, language: language)
+                    }
                     Text ("Chapters")
                         .bold()
                         .padding(.vertical)
@@ -61,9 +64,8 @@ struct HomeView: View {
                     .foregroundStyle(Color.black)
             })
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
         .tint(Color("primaryColor"))
-        
     }
     
 }
@@ -104,6 +106,10 @@ struct VerseCard: View {
 }
 
 struct LastRead: View {
+    
+    @State var lastRead: LastReadModel
+    @StateObject var language: Language
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Last Read")
@@ -113,16 +119,32 @@ struct LastRead: View {
                 .font(.title3)
                 .bold()
                 .padding(.vertical)
-            Text("धृतराष्ट्र उवाच |\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः |\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ||१-१||")
-                .foregroundColor(Color.gray)
-                .textCase(.uppercase)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom)
+            if  language.currentLanguage == "en" {
+                Text(lastRead.lastReadVerseEnglish)
+                    .foregroundColor(Color.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom)
+                    .lineLimit(4)
+            } else {
+                Text(lastRead.lastReadVerseHindi)
+                    .foregroundColor(Color.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom)
+                    .lineLimit(4)
+            }
             Button("Continue Reading") {
                 
             }
             .foregroundColor(Color("primaryColor"))
             .textCase(.uppercase)
+            .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("UpdateDataNotification"))) { notification in
+                if let dataReceived = notification.userInfo as? [String: Any] {
+                    if let value = dataReceived["data"] as? LastReadModel {
+                        lastRead = value
+                        print("Received data in Screen 1: \(value)")
+                    }
+                }
+            }
         }
     }
 }

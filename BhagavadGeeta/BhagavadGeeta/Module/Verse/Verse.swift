@@ -33,6 +33,7 @@ struct Verse: View {
                                     selectedButton = count
                                     viewModel.getVerse(ch: chapter, sl: "\(count + 1)")
                                     changeIcon(ch: chapter, sl: "\(count + 1)")
+                                    
                                 }
                                 .padding(8)
                                 .foregroundColor(selectedButton == count ? Color("primaryColor") : Color.black)
@@ -49,6 +50,10 @@ struct Verse: View {
                         .font(.title2)
                         .bold()
                         .padding()
+                        .onAppear {
+                            setLastRead(lastRead: LastReadModel(lastReadVerseHindi: verse.tej.ht, lastReadVerseEnglish: verse.siva.et, lastReadChapter: chapter, lastReadVerseNum: "\(verse.verse)"))
+                           
+                        }
                     Text(verse.slok)
                         .multilineTextAlignment(.center)
                         .font(.title3)
@@ -102,6 +107,14 @@ struct Verse: View {
             }))
         }
         .navigationBarTitle("", displayMode: .inline)
+    }
+    
+    func setLastRead(lastRead: LastReadModel) {
+        UserDefaultHelper.shared.lastReadChapter = lastRead.lastReadChapter
+        UserDefaultHelper.shared.lastReadVerseNum = lastRead.lastReadVerseNum
+        UserDefaultHelper.shared.lastReadVerseHindi = lastRead.lastReadVerseHindi
+        UserDefaultHelper.shared.lastReadVerseEnglish = lastRead.lastReadVerseEnglish
+        NotificationCenter.default.post(name: NSNotification.Name("UpdateDataNotification"), object: nil, userInfo: ["data": lastRead])
     }
     
     func changeIcon(ch: String, sl: String) {
