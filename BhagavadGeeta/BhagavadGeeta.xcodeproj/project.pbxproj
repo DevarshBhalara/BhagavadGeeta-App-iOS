@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11478CD12AFA73D2007B10C3 /* LastRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11478CD02AFA73D2007B10C3 /* LastRead.swift */; };
 		1150DF042AEF87890051FA36 /* BhagavadGeetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF032AEF87890051FA36 /* BhagavadGeetaApp.swift */; };
 		1150DF062AEF87890051FA36 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150DF052AEF87890051FA36 /* HomeView.swift */; };
 		1150DF082AEF878A0051FA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1150DF072AEF878A0051FA36 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11478CD02AFA73D2007B10C3 /* LastRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRead.swift; sourceTree = "<group>"; };
 		1150DF002AEF87890051FA36 /* BhagavadGeeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGeeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1150DF032AEF87890051FA36 /* BhagavadGeetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhagavadGeetaApp.swift; sourceTree = "<group>"; };
 		1150DF052AEF87890051FA36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				11C8EDA22AF0D5C700008A63 /* Chapter.swift */,
 				11C597A32AF1470400505E18 /* Slok.swift */,
+				11478CD02AFA73D2007B10C3 /* LastRead.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				11C597A42AF1470400505E18 /* Slok.swift in Sources */,
 				11CB106C2AEFFBD500DC6A51 /* APIManager+EndPoints.swift in Sources */,
 				11CB10602AEFFBAE00DC6A51 /* AppConstants.swift in Sources */,
+				11478CD12AFA73D2007B10C3 /* LastRead.swift in Sources */,
 				1150DF042AEF87890051FA36 /* BhagavadGeetaApp.swift in Sources */,
 				11CB106E2AEFFBD500DC6A51 /* APIManager+Request.swift in Sources */,
 				11CB106B2AEFFBD500DC6A51 /* APIManager+ErrorHandler.swift in Sources */,

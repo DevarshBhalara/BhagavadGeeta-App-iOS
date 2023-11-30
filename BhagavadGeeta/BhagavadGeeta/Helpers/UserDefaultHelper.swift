@@ -12,6 +12,11 @@ struct Keys {
     static let randomSlokEnglish = "randomSlokEnglish"
     static let randomSlokHindi = "randomSlokHindi"
     static let language = "language"
+    
+    static let lastReadVerseHindi = "lastReadVerseHindi"
+    static let lastReadVerseEnglish = "lastReadVerseEnglish"
+    static let lastReadChapter = "lastReadChapter"
+    static let lastReadVerseNum = "lastReadVerseNum"
 }
 
 class UserDefaultHelper: NSObject {
@@ -56,6 +61,46 @@ class UserDefaultHelper: NSObject {
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: Keys.language)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var lastReadVerseHindi: String {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.lastReadVerseHindi) ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Keys.lastReadVerseHindi)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var lastReadVerseEnglish: String {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.lastReadVerseEnglish) ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Keys.lastReadVerseEnglish)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var lastReadChapter: String {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.lastReadChapter) ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Keys.lastReadChapter)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var lastReadVerseNum: String {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.lastReadVerseNum) ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Keys.lastReadVerseNum)
             UserDefaults.standard.synchronize()
         }
     }
